@@ -168,16 +168,9 @@ toolbarspring {
 	}	
 }
 
-/* Search engines buttons */	
+/* Hide the "This time, search with" one-offs section entirely */
 .search-one-offs {
-	padding: 8px !important;
-	background: var(--gnome-menu-background) !important;
-	border-top: 1px solid var(--gnome-menu-separator-color) !important;
-	border-radius: 0 0 8px 8px !important;
-}
-
-.search-one-offs[is_searchbar="true"] {
-	margin-bottom: -8px !important;
+	display: none !important;
 }
 
 /* Search bar result */
@@ -213,6 +206,13 @@ toolbarspring {
 #urlbar .urlbar-icon {
 	margin: 0 !important;
 	height: 100%  !important;
+}
+/* Go button is a plain <img> (Firefox sizes it via width/height: auto,
+   scaling to the moz-icon's native size); the 100% height above also
+   stretches it since it carries the .urlbar-icon class */
+#urlbar .urlbar-input-container .urlbar-go-button {
+	height: 16px !important;
+	width: 16px !important;
 }
 #notification-popup-box {
 	height: 100%  !important;

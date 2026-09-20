@@ -308,11 +308,14 @@ button.close::before {
 	#context-back { 
 		--menuitem-icon: var(--gnome-icon-go-previous-symbolic) !important;
 	}
-	/* Forward button */	
+	/* Forward button */
 	#nav-bar #forward-button,
-	#urlbar-go-button,
-	.search-go-button { 
+	.search-go-button {
 		list-style-image: var(--gnome-icon-go-next-symbolic) !important;
+	}
+	/* Urlbar go button is a plain <img>, uses CSS content instead of list-style-image */
+	.urlbar-go-button {
+		content: var(--gnome-icon-go-next-symbolic) !important;
 	}
 	#context-forward {
 		--menuitem-icon: var(--gnome-icon-go-next-symbolic) !important;

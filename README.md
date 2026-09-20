@@ -2,23 +2,14 @@
 
 # Firefox GNOME theme
 
-[![GitHub](https://img.shields.io/github/license/rafaelmardojai/firefox-gnome-theme.svg)](https://github.com/rafaelmardojai/firefox-gnome-theme/blob/master/LICENSE)
-[![Donate](https://img.shields.io/badge/PayPal-Donate-gray.svg?style=flat&logo=paypal&colorA=0071bb&logoColor=fff)](https://paypal.me/RafaelMardojaiCM)
-[![Liberapay](https://img.shields.io/liberapay/receives/rafaelmardojai.svg?logo=liberapay)](https://liberapay.com/rafaelmardojai/donate)
-
 <br>
 
 **A GNOME theme for Firefox**
 
-This theme follows latest GNOME Adwaita style.
+This theme follows latest GNOME Adwaita style. Personal fork of [rafaelmardojai/firefox-gnome-theme](https://github.com/rafaelmardojai/firefox-gnome-theme).
 
 > [!WARNING]
-> ### Disclaimer:
-> Be aware that this theme might do things that are not supported by upstream Firefox. If you face an issue while using this theme, report it here first or test if it is reproducible in vanilla Firefox.
->
-> If you are a software distribution maintainer, please do not ship these changes by default to your users unless you make it extremely clear that they are using a modified version of the Firefox UI.
-
-![Screenshot of the theme](screenshot.png)
+> Be aware that this theme might do things that are not supported by upstream Firefox. If you face an issue, test if it is reproducible in vanilla Firefox.
 
 ## Description
 
@@ -32,23 +23,12 @@ The `master` branch of this repo supports the current Firefox stable release `15
 
 ## Installation scripts
 
-If you want to use other version of the theme than the stable one you can manually download the theme and run its install scripts.
-
-First you need to grab a fresh copy of the theme repository by cloning it with git.
-
 1. Clone this repo and enter folder:
 
 	```sh
-	git clone https://github.com/rafaelmardojai/firefox-gnome-theme.git
-	cd firefox-gnome-theme
+	git clone https://github.com/chayotesudado/firefox-gnome-theme-personal.git
+	cd firefox-gnome-theme-personal
 	```
-2. Checkout a git branch or tag if needed, otherwise use `master` and ignore this step.
-	```sh
-	git checkout beta # Set beta branch
-	git checkout v78.1 # Set v78.1 tag
-	```
-
-This theme provides two installation scripts in addition to the curled one.
 
 ### Auto install script
 
@@ -81,18 +61,6 @@ Here are some examples of how to use it:
 - `-p <profile_name>` *optional*
 	- Set custom profile name, for example `e0j6yb0p.default-nightly`.
 	- Default: All the profiles found in the firefox folder
-
-### Advanced notes
-<details>
-    <summary>Expand</summary>
-
-If you want to checkout the theme version tag matching you Firefox version you can run:
-
-```sh
-git checkout v$(firefox --version | cut -d ' ' -f 3 | cut -d '.' -f 1) # Using Firefox version
-```
-</details>
-
 
 ## Required Firefox preferences
 We provide a **user.js** configuration file in `configuration/user.js` that enables some preferences required by this theme to work.
@@ -262,11 +230,5 @@ of its elements too.
 GTK_DEBUG=interactive epiphany
 ```
 
-Feel free to use any parts of my code to develop your own themes, I don't force
-any specific license on your code.
-
 ## Credits
-Developed by **[Rafael Mardojai CM](https://github.com/rafaelmardojai)** and [contributors](https://github.com/rafaelmardojai/firefox-gnome-theme/graphs/contributors). Based on **[Luna Kurame](https://github.com/lunakurame/firefox-gnome-theme)**'s original work.
-
-## Donate
-If you want to support development, consider donating via [PayPal](https://paypal.me/RafaelMardojaiCM). Also consider donating upstream, [Firefox](https://donate.mozilla.org/) & [GNOME](https://www.gnome.org/donate/).
+Originally developed by **[Rafael Mardojai CM](https://github.com/rafaelmardojai)** and [contributors](https://github.com/rafaelmardojai/firefox-gnome-theme/graphs/contributors), based on **[Luna Kurame](https://github.com/lunakurame/firefox-gnome-theme)**'s original work. This is a personal fork with local customizations.

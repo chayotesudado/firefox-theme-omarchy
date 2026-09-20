@@ -1,5 +1,3 @@
-<img src="icon.svg" alt="Firefox GNOME theme" width="128" align="left"/>
-
 # Firefox GNOME theme
 
 <br>
@@ -9,7 +7,7 @@
 This theme follows latest GNOME Adwaita style. Personal fork of [rafaelmardojai/firefox-gnome-theme](https://github.com/rafaelmardojai/firefox-gnome-theme).
 
 > [!WARNING]
-> Be aware that this theme might do things that are not supported by upstream Firefox. If you face an issue, test if it is reproducible in vanilla Firefox.
+> This theme might do things that are not supported by upstream Firefox. If you face an issue, test if it is reproducible in vanilla Firefox.
 
 ## Description
 

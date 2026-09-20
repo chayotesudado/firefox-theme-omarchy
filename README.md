@@ -24,36 +24,11 @@ This theme follows latest GNOME Adwaita style.
 
 This is a bunch of CSS code to make Firefox look closer to GNOME's native apps.
 
-### Getting in Touch
-
-Matrix room: [#firefox-gnome-theme:matrix.org](https://matrix.to/#/#firefox-gnome-theme:matrix.org)
 
 ### Firefox versions support
 
-The `master` branch of this repo supports the current Firefox stable release `150`.
+The `master` branch of this repo supports the current Firefox stable release `156`.
 
-Theme versions compatible with older Firefox releases are preserved as git tags.
-
-We also have the `beta` and `nightly` branches for fixes only applicable to the current Firefox beta and nightly versions.
-
-# Installation
-
-The most friendly way to get this theme is using the **Add Water** app.
-
-<a href='https://flathub.org/apps/dev.qwery.AddWater'>
-    <img width='240' alt='Get it on Flathub' src='https://flathub.org/api/badge?locale=en'/>
-</a>
-
-## One command install with curl
-
-To install this theme, you can run this command, which uses *curl* to download a script that will also download the latest released version of the theme (not the master version) and run the **auto-install** script for you.
-
-> [!WARNING]
-> Always be careful when running scripts from the Internet.
-
-```sh
-curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
-```
 
 ## Installation scripts
 
@@ -118,63 +93,6 @@ git checkout v$(firefox --version | cut -d ' ' -f 3 | cut -d '.' -f 1) # Using F
 ```
 </details>
 
-## Package managers
-
-### Arch Linux
-
-1. Install the [AUR package](https://aur.archlinux.org/packages/firefox-gnome-theme) `firefox-gnome-theme` 
-2. Follow the instructions at `cat /usr/share/doc/firefox-gnome-theme/INSTALL.md`
-
-## Manual installation
-<details>
-    <summary>Expand</summary>
-
-1. Go to `about:support` in Firefox.
-
-2. Application Basics > Profile Directory > Open Directory.
-
-3. Open directory in a terminal.
-
-4. Create a `chrome` directory if it doesn't exist:
-
-    ```sh
-    mkdir -p chrome
-    cd chrome
-    ```
-
-5. Clone this repo to a subdirectory:
-
-    ```sh
-    git clone https://github.com/rafaelmardojai/firefox-gnome-theme.git
-    ```
-
-6. Create single-line user CSS files if non-existent or empty (at least one line is needed for `sed`):
-
-    ```sh
-    [[ -s userChrome.css ]] || echo >> userChrome.css
-    [[ -s userContent.css ]] || echo >> userContent.css
-    ```
-
-7. Import this theme at the beginning of the CSS files (all `@import`s must come before any existing `@namespace` declarations):
-
-    ```sh
-    sed -i '1s/^/@import "firefox-gnome-theme\/userChrome.css";\n/' userChrome.css
-    sed -i '1s/^/@import "firefox-gnome-theme\/userContent.css";\n/' userContent.css
-    ```
-
-8. Symlink preferences file:
-
-    ```sh
-    cd .. # Go back to the profile directory
-    ln -fs chrome/firefox-gnome-theme/configuration/user.js user.js
-    ```
-
-9. Restart Firefox.
-
-10. Open Firefox customization panel and move the new tab button to headerbar.
-
-11. Be happy with your new gnomish Firefox.
-</details>
 
 ## Required Firefox preferences
 We provide a **user.js** configuration file in `configuration/user.js` that enables some preferences required by this theme to work.

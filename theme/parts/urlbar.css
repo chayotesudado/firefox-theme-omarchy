@@ -214,6 +214,18 @@ toolbarspring {
 	height: 16px !important;
 	width: 16px !important;
 }
+/* Page-action icons (translate, reader mode, picture-in-picture, star, etc.)
+   and the search-revert (persisted search terms) button must stay their
+   native 16x16 size - the 100% height above stretches any of them that
+   don't carry their own explicit size override, distorting them.
+   Needs the #urlbar prefix to outweigh the #urlbar .urlbar-icon rule above:
+   both are !important, so without it the higher-specificity ID selector
+   would still win regardless of source order. */
+#urlbar .urlbar-page-action > .urlbar-icon,
+#urlbar .urlbar-revert-button {
+	height: 16px !important;
+	width: 16px !important;
+}
 #notification-popup-box {
 	height: 100%  !important;
 }

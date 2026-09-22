@@ -16,7 +16,7 @@ This is a bunch of CSS code to make Firefox look closer to GNOME's native apps.
 
 ### Firefox versions support
 
-The `master` branch of this repo supports the current Firefox stable release `155`.
+The `master` branch of this repo supports the current Firefox stable release `156`.
 
 
 ## Installation scripts

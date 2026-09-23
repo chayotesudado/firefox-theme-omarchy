@@ -6,6 +6,15 @@
 
 This theme follows latest GNOME Adwaita style. Personal fork of [rafaelmardojai/firefox-gnome-theme](https://github.com/rafaelmardojai/firefox-gnome-theme).
 
+Changes from upstream:
+
+- Fixed urlbar go-button icon not applying (now uses `content` instead of `list-style-image`, matching how Firefox renders it as a plain `<img>`)
+- Fixed urlbar icons (go-button, page-action icons, search-revert button) being stretched/distorted; forced to a fixed 16x16 size
+- Hid the "search with" one-offs section in the urlbar dropdown
+- Hid the "Sign in to sync" promo card in the app menu
+- Removed the tab close-button hover overlay
+- Reworked tab-label text fade/mask on hover/selection to match the overlay removal
+
 > [!WARNING]
 > This theme might do things that are not supported by upstream Firefox. If you face an issue, test if it is reproducible in vanilla Firefox.
 

@@ -14,6 +14,7 @@ Changes from upstream:
 - Hid the "Sign in to sync" promo card in the app menu
 - Removed the tab close-button hover overlay
 - Reworked tab-label text fade/mask on hover/selection to match the overlay removal
+- Defined the missing `--gnome-content-padding` variable (12px), fixing zero padding/margins in notification popups (e.g. extension install buttons flush against the edge), the sidebar panel header and the trust panel
 
 > [!WARNING]
 > This theme might do things that are not supported by upstream Firefox. If you face an issue, test if it is reproducible in vanilla Firefox.

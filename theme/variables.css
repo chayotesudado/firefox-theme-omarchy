@@ -9,6 +9,7 @@
 	--gnome-menu-radius: 9px;
 	--gnome-menu-padding: 6px;
 	--gnome-menu-item-padding: 12px;
+	--gnome-content-padding: 12px;
 	--gnome-popover-radius: calc(var(--gnome-menu-radius) + 6px);
 	--gnome-dialog-radius: 18px; /* Alert dialog */
 	--gnome-dialog-padding: 24px;

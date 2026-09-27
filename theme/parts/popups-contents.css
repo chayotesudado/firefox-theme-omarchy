@@ -257,6 +257,10 @@
 	.panel-footer {
 		--gnome-menu-padding: var(--gnome-content-padding) !important;
 	}
+	.popup-notification-body-container {
+		padding-block-start: var(--gnome-content-padding) !important;
+		padding-inline: var(--gnome-content-padding) !important;
+	}
 }
 
 .webext-perm-domains-list {

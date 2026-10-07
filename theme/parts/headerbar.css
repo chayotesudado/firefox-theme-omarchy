@@ -30,8 +30,10 @@
 	}
 }
 
-/* Hide tabsbar default private browsing indicator */
-.private-browsing-indicator-with-label {
+/* Hide tabsbar default private browsing indicators. Nova swaps the labeled
+ * one for an icon-only button, which would keep a hidden single tab's bar up. */
+.private-browsing-indicator-with-label,
+.private-browsing-indicator-button {
 	display: none !important;
 }
 

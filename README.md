@@ -16,6 +16,7 @@ Changes from upstream:
 - Reworked tab-label text fade/mask on hover/selection to match the overlay removal
 - Defined the missing `--gnome-content-padding` variable (12px), fixing zero padding/margins in notification popups (e.g. extension install buttons flush against the edge), the sidebar panel header and the trust panel
 - Matched notification popup body padding (top/sides) to the 12px footer margin so spacing is even on all edges
+- Hid the icon-only private browsing indicator button (shown when `browser.nova.enabled` is set), which kept an empty tab bar visible in private windows with a single hidden tab
 
 > [!WARNING]
 > This theme might do things that are not supported by upstream Firefox. If you face an issue, test if it is reproducible in vanilla Firefox.

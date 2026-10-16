@@ -13,7 +13,7 @@
 	--tab-pinned-container-margin-inline-expanded: calc(var(--gnome-toolbar-padding) / 2) !important;
 	--tabstrip-inner-border: 1px solid var(--gnome-border-color) !important;
 	--tab-height-with-margin-padding: calc(var(--tab-min-height) + 5px) !important;
-
+	
 	@media not -moz-pref("sidebar.verticalTabs") {
 		/* We need the hardcoded tab colors in horizontal tabs, beacuse of the close button overlay */
 		--tab-background-color-hover: var(--gnome-tabbar-tab-hover-background) !important;
@@ -170,7 +170,7 @@ spacer[part=overflow-start-indicator], spacer[part=overflow-end-indicator] {
 			--tab-background-color-hover: var(--gnome-tabbar-tab-active-background-contrast) !important;
 			--tab-background-color-selected: var(--gnome-tabbar-tab-active-background-contrast) !important;
 		}
-	}
+	}	
 
 	/* Horizontal tabs only */
 	#tabbrowser-tabs[orient="horizontal"] & {
@@ -343,7 +343,7 @@ spacer[part=overflow-start-indicator], spacer[part=overflow-end-indicator] {
 				}
 			}
 		}
-
+		
 		/* Fix alignment when audio button is prestent */
 		tab:is([muted], [soundplaying]) & {
 			@media (not (-moz-gtk-csd-reversed-placement)) and (not -moz-pref("gnomeTheme.swapTabClose")) {
@@ -417,10 +417,12 @@ spacer[part=overflow-start-indicator], spacer[part=overflow-end-indicator] {
 		}
 	}
 	
+	/* The tab clips its own overflow, so a button hanging over its edge is cut.
+	 * Firefox keeps it inside, these are its insets. */
 	#tabbrowser-tabs[orient="vertical"]:not([expanded]) & {
 		padding: 2px !important;
-		top: -5px !important;
-		inset-inline-start: 0px !important;
+		top: -3px !important;
+		inset-inline-start: 2px !important;
 	}
 }
 
@@ -682,12 +684,10 @@ tab-group {
 		padding-block: 3px !important;
 
 		> .tab-group-label-hover-highlight {
-			width: 100% !important;
 			margin-inline: 0 !important;
 			padding-inline: 0 !important;
 
 			> .tab-group-label {
-				align-self: stretch !important;
 				min-height: var(--tab-min-height) !important;
 				line-height: var(--tab-min-height) !important;
 				margin-inline: var(--gnome-toolbar-padding) !important;

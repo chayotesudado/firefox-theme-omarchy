@@ -28,3 +28,13 @@
         }
     }
 }
+
+/* Show a blank page instead of the private browsing intro */
+@-moz-document url("about:privatebrowsing") {
+    @media -moz-pref("gnomeTheme.blankPrivateBrowsingPage") {
+        body > *,
+        body::before {
+            display: none !important;
+        }
+    }
+}

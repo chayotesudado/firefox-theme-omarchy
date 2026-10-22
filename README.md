@@ -152,6 +152,10 @@ Optional features can be enabled by creating new `boolean` preferences in `about
 
 	Hide redundant WebRTC indicator since GNOME provides their own privacy icons in the top right.
 
+- **Blank private browsing page** `gnomeTheme.blankPrivateBrowsingPage`
+
+	Show a blank page instead of the "You're off the record" intro when opening a private window.
+
 - **Hide unified extensions button** `gnomeTheme.hideUnifiedExtensions`
 
 	Hide unified extensions button from the navbar, you can also use `extensions.unifiedExtensions.enabled` instead, which is only going to work till Firefox 111.

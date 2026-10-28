@@ -68,6 +68,7 @@ button.close,
 	border: 0 !important;
 	color: var(--gnome-window-color) !important;
 	font: menu !important;
+	font-family: monospace !important;
 	font-weight: bold !important;
 	justify-content: center !important;
 	max-height: var(--gnome-button-size) !important;
@@ -170,7 +171,7 @@ button.popup-notification-primary-button:not(#hack),
 	--gnome-button-background: var(--gnome-button-suggested-background) !important;
 	--gnome-button-hover-background: var(--gnome-button-suggested-background) !important;
 	--gnome-button-active-background: var(--gnome-button-suggested-background) !important;
-	color: white !important;
+	color: var(--gnome-accent-fg, white) !important;
 
 	&:not([disabled]) {
 		&:hover {
@@ -254,7 +255,7 @@ menulist,
 #downloadsPanel-mainView .download-state .downloadButton,
 .permission-popup-permission-remove-button:not(#hack),
 .remote-tabs-close-button {
-	border-radius: 100% !important;
+	border-radius: 0 !important;
 }
 
 /* Combined buttons */

@@ -1,0 +1,41 @@
+/* Omarchy colors, square corners and font on Firefox's own pages. Scoped so
+ * web pages keep their design. */
+@-moz-document url-prefix("about:"), url-prefix("chrome:") {
+	:root {
+		color-scheme: var(--omarchy-color-scheme) !important;
+
+		/* Firefox's design tokens default to its own violet-tinted grays */
+		--background-color-box: var(--omarchy-dark-background) !important;
+		--background-color-box-info: var(--omarchy-lighter-background) !important;
+		--background-color-critical: color-mix(in srgb, var(--omarchy-red) 20%, var(--omarchy-background)) !important;
+		--background-color-information: color-mix(in srgb, var(--omarchy-blue) 20%, var(--omarchy-background)) !important;
+		--background-color-success: color-mix(in srgb, var(--omarchy-green) 20%, var(--omarchy-background)) !important;
+		--background-color-warning: color-mix(in srgb, var(--omarchy-yellow) 20%, var(--omarchy-background)) !important;
+		--text-color: var(--omarchy-foreground) !important;
+		--text-color-deemphasized: var(--omarchy-light-foreground) !important;
+		--border-color: var(--omarchy-muted) !important;
+		--border-color-deemphasized: var(--omarchy-selection) !important;
+		--border-color-interactive: var(--omarchy-muted) !important;
+		--border-color-interactive-hover: var(--omarchy-light-foreground) !important;
+		--border-color-interactive-active: var(--omarchy-foreground) !important;
+
+		--border-radius-xsmall: 0px !important;
+		--border-radius-small: 0px !important;
+		--border-radius-medium: 0px !important;
+		--border-radius-large: 0px !important;
+		--border-radius-xlarge: 0px !important;
+		--border-radius-circle: 0px !important;
+		--button-border-radius: 0px !important;
+		--card-border-radius: 0px !important;
+	}
+
+	*,
+	*::before,
+	*::after {
+		border-radius: 0 !important;
+	}
+
+	* {
+		font-family: monospace !important;
+	}
+}

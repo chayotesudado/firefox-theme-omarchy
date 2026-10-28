@@ -1,0 +1,43 @@
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Square corners everywhere, like the rest of Omarchy. The theme's own radii
+ * are zeroed in variables.css and the parts.
+ *
+ * Firefox's design tokens are zeroed so anything built on them, including
+ * elements inside shadow trees that only inherit the variables, comes out
+ * square. */
+:root {
+	--border-radius-xsmall: 0px !important;
+	--border-radius-small: 0px !important;
+	--border-radius-medium: 0px !important;
+	--border-radius-large: 0px !important;
+	--border-radius-xlarge: 0px !important;
+	--border-radius-circle: 0px !important;
+
+	--arrowpanel-border-radius: 0px !important;
+	--button-border-radius: 0px !important;
+	--card-border-radius: 0px !important;
+	--menuitem-border-radius: 0px !important;
+	--panel-border-radius: 0px !important;
+	--panel-item-button-border-radius: 0px !important;
+	--panel-menuitem-border-radius: 0px !important;
+	--popup-border-radius: 0px !important;
+	--sidebar-border-radius: 0px !important;
+	--tab-border-radius: 0px !important;
+	--toggle-border-radius: 0px !important;
+	--toolbarbutton-border-radius: 0px !important;
+	--urlbar-border-radius: 0px !important;
+	--urlbar-inner-border-radius: 0px !important;
+	--urlbarview-border-radius: 0px !important;
+	--urlbar-background-border-radius: 0px !important;
+	--urlbar-background-border-top-radius-open: 0px !important;
+	--window-border-radius: 0px !important;
+}
+
+/* Firefox's own literal radii. User !important beats Firefox's stylesheets
+ * whatever their specificity. */
+*,
+*::before,
+*::after {
+	border-radius: 0 !important;
+}

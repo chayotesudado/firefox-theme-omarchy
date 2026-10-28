@@ -1,0 +1,25 @@
+/* Fallback Omarchy palette (Gruvbox), used when the generated
+ * theme/omarchy/generated.css is missing. See omarchy/firefox.css.tpl. */
+:root {
+	--omarchy-color-scheme: dark;
+	--omarchy-accent: #7daea3;
+	--omarchy-selection: #504945;
+	--omarchy-muted: #665c54;
+
+	--omarchy-background: #282828;
+	--omarchy-dark-background: #1e1e1e;
+	--omarchy-darker-background: #161616;
+	--omarchy-lighter-background: #3c3836;
+
+	--omarchy-foreground: #d4be98;
+	--omarchy-dark-foreground: #7c6f64;
+	--omarchy-light-foreground: #bdae93;
+
+	--omarchy-red: #ea6962;
+	--omarchy-yellow: #d8a657;
+	--omarchy-orange: #e1875c;
+	--omarchy-green: #a9b665;
+	--omarchy-cyan: #89b482;
+	--omarchy-blue: #7daea3;
+	--omarchy-magenta: #d3869b;
+}

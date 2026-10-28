@@ -18,6 +18,17 @@ Changes from upstream:
 - Matched notification popup body padding (top/sides) to the 12px footer margin so spacing is even on all edges
 - Hid the icon-only private browsing indicator button (shown when `browser.nova.enabled` is set), which kept an empty tab bar visible in private windows with a single hidden tab
 
+### Omarchy
+
+The `omarchy` branch adapts the theme to [Omarchy](https://omarchy.org) 4:
+
+- Colors follow the active Omarchy theme. `omarchy/firefox.css.tpl` is an Omarchy template, so `omarchy theme set` renders the theme's `colors.toml` to `~/.local/state/omarchy/current/theme/firefox.css`, which is linked into the profile as `theme/omarchy/generated.css`. Without it, a Gruvbox palette is used.
+- Square corners everywhere.
+- The UI uses the Omarchy font (fontconfig's `monospace`, which `omarchy font set` changes; JetBrains Mono by default).
+- No window buttons, since Hyprland manages the window.
+
+Install with `./scripts/omarchy-install.sh` (same options as `install.sh`). Firefox only reads its CSS at startup, so restart it after switching Omarchy themes.
+
 > [!WARNING]
 > This theme might do things that are not supported by upstream Firefox. If you face an issue, test if it is reproducible in vanilla Firefox.
 

@@ -85,7 +85,7 @@ toolbarspring {
 }
 .searchmode-switcher-close {
 	background-size: 16px !important;
-	border-radius: 50% !important;
+	border-radius: 0 !important;
 	height: 24px !important;
 	margin: 0 !important;
 	width: 24px !important;
@@ -175,6 +175,7 @@ toolbarspring {
 	&[label]::before {
 		color: var(--gnome-window-color) !important;
 		font: menu !important;
+		font-family: monospace !important;
 		font-weight: bold !important;
 	}
 }
@@ -183,7 +184,7 @@ toolbarspring {
 	.urlbarView-row[has-action]:is([type="switchtab"], [type="remotetab"], [type="clipboard"]) & {
 		align-items: center;
 		background-color: var(--gnome-trough-background) !important;
-		border-radius: 14px !important;
+		border-radius: 0 !important;
 		border: 0 !important;
 		color: var(--gnome-menu-color);
 		display: flex;
@@ -293,7 +294,7 @@ toolbarspring {
 #urlbar-zoom-button {
 	background: var(--gnome-button-background) !important;
 	border: 0 !important;
-	border-radius: 26px !important;
+	border-radius: 0 !important;
 	outline: 0 !important;
 	margin: 4px 0;
 }
@@ -307,7 +308,7 @@ toolbarspring {
 #urlbar-search-mode-indicator-close {
 	background-size: 16px !important;
 	background-position: center;
-	border-radius: 26px !important;
+	border-radius: 0 !important;
 	padding: 5px !important;
 }
 #urlbar-search-mode-indicator-close:hover {

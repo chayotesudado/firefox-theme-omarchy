@@ -1,0 +1,127 @@
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Maps the Omarchy palette (--omarchy-*, from palette.css or the generated
+ * file) onto the theme's variables. It is imported after light.css, dark.css
+ * and black.css, so it wins over both schemes and works for light and dark
+ * Omarchy themes alike. Rules those files set with !important are repeated
+ * here with !important and the same selector. */
+:root {
+	/* Palette: every shade of a hue collapses to the Omarchy color */
+	--gnome-palette-blue-1: var(--omarchy-blue);
+	--gnome-palette-blue-2: var(--omarchy-blue);
+	--gnome-palette-blue-3: var(--omarchy-blue);
+	--gnome-palette-blue-4: var(--omarchy-blue);
+	--gnome-palette-blue-5: var(--omarchy-blue);
+	--gnome-palette-green-1: var(--omarchy-green);
+	--gnome-palette-green-2: var(--omarchy-green);
+	--gnome-palette-green-3: var(--omarchy-green);
+	--gnome-palette-green-4: var(--omarchy-green);
+	--gnome-palette-green-5: var(--omarchy-green);
+	--gnome-palette-yellow-1: var(--omarchy-yellow);
+	--gnome-palette-yellow-2: var(--omarchy-yellow);
+	--gnome-palette-yellow-3: var(--omarchy-yellow);
+	--gnome-palette-yellow-4: var(--omarchy-yellow);
+	--gnome-palette-yellow-5: var(--omarchy-yellow);
+	--gnome-palette-orange-1: var(--omarchy-orange);
+	--gnome-palette-orange-2: var(--omarchy-orange);
+	--gnome-palette-orange-3: var(--omarchy-orange);
+	--gnome-palette-orange-4: var(--omarchy-orange);
+	--gnome-palette-orange-5: var(--omarchy-orange);
+	--gnome-palette-red-1: var(--omarchy-red);
+	--gnome-palette-red-2: var(--omarchy-red);
+	--gnome-palette-red-3: var(--omarchy-red);
+	--gnome-palette-red-4: var(--omarchy-red);
+	--gnome-palette-red-5: var(--omarchy-red);
+	--gnome-palette-purple-1: var(--omarchy-magenta);
+	--gnome-palette-purple-2: var(--omarchy-magenta);
+	--gnome-palette-purple-3: var(--omarchy-magenta);
+	--gnome-palette-purple-4: var(--omarchy-magenta);
+	--gnome-palette-purple-5: var(--omarchy-magenta);
+
+	/* Accent and states. Omarchy colors are already tuned for their
+	 * background, so no oklab contrast adjustment is applied. */
+	--gnome-accent-bg: var(--omarchy-accent);
+	--gnome-accent: var(--omarchy-accent);
+	--gnome-accent-fg: var(--omarchy-background);
+	--gnome-destructive-bg: var(--omarchy-red);
+	--gnome-destructive: var(--omarchy-red);
+	--gnome-success-bg: var(--omarchy-green);
+	--gnome-success: var(--omarchy-green);
+	--gnome-warning-bg: var(--omarchy-yellow);
+	--gnome-warning: var(--omarchy-yellow);
+	--gnome-error-bg: var(--omarchy-red);
+	--gnome-error: var(--omarchy-red);
+	--gnome-focus-border-color: var(--omarchy-accent);
+	--gnome-selection-bg: var(--omarchy-selection);
+	--gnome-toolbar-star-button: var(--omarchy-yellow);
+
+	/* Window */
+	--gnome-window-background: var(--omarchy-background);
+	--gnome-window-color: var(--omarchy-foreground);
+	--gnome-view-background: var(--omarchy-background);
+	--gnome-view-color: var(--omarchy-foreground);
+	--gnome-sidebar-background: var(--omarchy-dark-background);
+	--gnome-sidebar-border-color: var(--omarchy-darker-background);
+	--gnome-secondary-sidebar-background: var(--omarchy-dark-background);
+
+	/* Card */
+	--gnome-card-background: var(--omarchy-lighter-background);
+	--gnome-card-shade-color: var(--omarchy-darker-background);
+	--gnome-card-shadow: 0 0 0 1px var(--omarchy-darker-background);
+
+	/* Menu: flat, outlined like Omarchy's menus instead of a drop shadow */
+	--gnome-menu-background: var(--omarchy-background);
+	--gnome-menu-color: var(--omarchy-foreground);
+	--gnome-menu-shadow: 0 0 0 1px var(--omarchy-muted);
+
+	/* Header bar */
+	--gnome-headerbar-background: var(--omarchy-dark-background);
+	--gnome-headerbar-shade-color: var(--omarchy-darker-background);
+
+	/* Tabs */
+	--gnome-tabbar-tab-needs-attetion: var(--omarchy-accent);
+	--gnome-tabbar-identity-color-blue: var(--omarchy-blue);
+	--gnome-tabbar-identity-color-turquoise: var(--omarchy-cyan);
+	--gnome-tabbar-identity-color-green: var(--omarchy-green);
+	--gnome-tabbar-identity-color-yellow: var(--omarchy-yellow);
+	--gnome-tabbar-identity-color-orange: var(--omarchy-orange);
+	--gnome-tabbar-identity-color-red: var(--omarchy-red);
+	--gnome-tabbar-identity-color-pink: var(--omarchy-magenta);
+	--gnome-tabbar-identity-color-purple: var(--omarchy-magenta);
+
+	/* Tab groups (defined in tabsbar.css, which is imported earlier) */
+	--gnome-group-blue: var(--omarchy-blue);
+	--gnome-group-purple: var(--omarchy-magenta);
+	--gnome-group-cyan: var(--omarchy-cyan);
+	--gnome-group-orange: var(--omarchy-orange);
+	--gnome-group-yellow: var(--omarchy-yellow);
+	--gnome-group-pink: var(--omarchy-magenta);
+	--gnome-group-green: var(--omarchy-green);
+	--gnome-group-gray: var(--omarchy-muted);
+	--gnome-group-red: var(--omarchy-red);
+
+	/* Miscellaneous */
+	--gnome-shade-color: var(--omarchy-darker-background);
+	--gnome-toolbar-icon-fill: var(--omarchy-foreground);
+
+	/* Private browsing pages */
+	--gnome-private-wordmark: var(--omarchy-foreground);
+	--gnome-private-in-content-page-background: var(--omarchy-background);
+	--gnome-private-text-primary-color: var(--omarchy-foreground);
+
+	/* Backdrop: Omarchy windows don't dim when unfocused */
+	&:-moz-window-inactive {
+		--gnome-headerbar-background: var(--omarchy-dark-background) !important;
+		--gnome-sidebar-background: var(--omarchy-dark-background);
+		--gnome-secondary-sidebar-background: var(--omarchy-dark-background);
+		--gnome-selection-bg: var(--omarchy-selection);
+	}
+
+	/* Private browsing: header bar tinted with the theme's magenta */
+	&[privatebrowsingmode="temporary"] {
+		--gnome-headerbar-background: color-mix(in srgb, var(--omarchy-magenta) 15%, var(--omarchy-dark-background)) !important;
+		&:-moz-window-inactive {
+			--gnome-headerbar-background: color-mix(in srgb, var(--omarchy-magenta) 15%, var(--omarchy-dark-background)) !important;
+		}
+	}
+}

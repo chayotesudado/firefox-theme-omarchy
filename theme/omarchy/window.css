@@ -1,0 +1,8 @@
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* No window buttons: Hyprland tiles the window and closes it with Super+W.
+ * Matches csd.css, which forces them visible on #nav-bar. */
+:root[customtitlebar] #nav-bar > .titlebar-buttonbox-container,
+.titlebar-buttonbox-container {
+	display: none !important;
+}

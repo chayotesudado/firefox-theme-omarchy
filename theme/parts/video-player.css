@@ -18,7 +18,7 @@
 }
 
 .controlBar {
-	border-radius: 5px;
+	border-radius: 0;
 	margin: auto;
 	margin-bottom: 5px;
 	width: 98.5%;
@@ -62,8 +62,8 @@
   position:absolute !important;
   margin-bottom: -150px !important;
 	background-color: rgba(20,20,20,0.8) !important;
-	border-bottom-right-radius: 5px !important;
-	border-top-right-radius: 5px !important;
+	border-bottom-right-radius: 0 !important;
+	border-top-right-radius: 0 !important;
 	transition-property: margin-bottom;
 	transition-duration: 0.13s;
 	transition-timing-function: linear;

@@ -1,0 +1,7 @@
+/* Browser UI in the Omarchy font. `omarchy font set` points fontconfig's
+ * monospace alias at the chosen font (JetBrains Mono by default), so the
+ * generic family follows it. The theme's own `font: menu` rules set the
+ * family next to the shorthand. */
+* {
+	font-family: monospace !important;
+}

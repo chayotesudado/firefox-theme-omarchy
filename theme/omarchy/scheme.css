@@ -1,0 +1,5 @@
+/* Resolve Firefox's light-dark() tokens by the Omarchy theme's mode, even if
+ * the GTK color scheme says otherwise. */
+:root {
+	color-scheme: var(--omarchy-color-scheme) !important;
+}

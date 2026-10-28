@@ -3,9 +3,9 @@
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 :root[customtitlebar] {
-	/* Headerbar top border corners rounded */
+	/* Headerbar top border corners (square for Omarchy) */
 	&[sizemode="normal"]:not([gtktiledwindow="true"]) #nav-bar {
-		border-radius: env(-moz-gtk-csd-titlebar-radius, 8px) env(-moz-gtk-csd-titlebar-radius, 8px) 0 0 !important;
+		border-radius: 0 !important;
 	}
 
 	/* Always show nav bar window buttons*/
@@ -51,7 +51,7 @@
 		/* Window buttons style */
 		.titlebar-button {
 			background: var(--gnome-button-background) !important;
-			border-radius: 100% !important;
+			border-radius: 0 !important;
 			height: 24px !important;
 			transition: background var(--gnome-animation-time);
 			width: 24px !important;

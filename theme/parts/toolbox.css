@@ -181,7 +181,7 @@ link[href="chrome://global/content/elements/moz-message-bar.css"] ~ .container {
 
 #import-button,
 #PlacesToolbar .bookmark-item {
-	border-radius: 6px !important;	
+	border-radius: 0 !important;
 	color: var(--gnome-window-color) !important;
 	padding: 3px 6px !important;
 

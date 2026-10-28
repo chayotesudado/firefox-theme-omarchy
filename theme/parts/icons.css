@@ -217,7 +217,7 @@ button.close::before {
 	}
 	menuitem[type="radio"] {
 		&::before {
-			border-radius: 100%;
+			border-radius: 0;
 			border: 1px solid var(--gnome-toolbar-icon-fill);
 		}
 		&[checked]::before {

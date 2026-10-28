@@ -358,7 +358,7 @@ spacer[part=overflow-start-indicator], spacer[part=overflow-end-indicator] {
 .tab-close-button {
 	border: 0 !important;
 	box-sizing: content-box !important; /* Avoid deformation on flexbox */
-	border-radius: 50% !important;
+	border-radius: 0 !important;
 	padding: 4px !important;
 	background-image: none !important;
 	background-color: transparent !important;
@@ -380,7 +380,7 @@ spacer[part=overflow-start-indicator], spacer[part=overflow-end-indicator] {
 
 /* Audio button */
 .tab-audio-button {
-	--button-border-radius: 50% !important;
+	--button-border-radius: 0 !important;
 	--button-size-icon-small: 24px !important;
 	
 	#tabbrowser-tabs[orient="horizontal"] & {
@@ -840,7 +840,7 @@ tab-group {
 
 /* Tabs group label */
 .tab-group-label {
-	border-radius: 26px !important;
+	border-radius: 0 !important;
 
 	tab-group[collapsed] & {
 		@media (prefers-color-scheme: dark) {
@@ -1114,9 +1114,9 @@ tab-group {
 		border-radius: 0 !important; 
 	 } 
 	
-	/* Round and pad tab-bar */
+	/* Square and pad tab-bar */
 	:root[customtitlebar][sizemode="normal"]:not([gtktiledwindow="true"]) #TabsToolbar {
-		border-radius: env(-moz-gtk-csd-titlebar-radius) env(-moz-gtk-csd-titlebar-radius) 0 0 !important
+		border-radius: 0 !important
 	}
 	:root[customtitlebar]:not([inFullscreen], [sizemode="maximized"]) #TabsToolbar .toolbar-items {
 		padding: 0 46px;

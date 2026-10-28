@@ -5,3 +5,16 @@
 * {
 	font-family: monospace !important;
 }
+
+/* Monospace runs wider than Adwaita Sans, so the URL bar and tab titles are
+ * set a bit smaller than the system size. */
+#urlbar .urlbar-input-container,
+.tab-label {
+	font-size: 0.9em !important;
+}
+
+/* Text fields get their size from the -moz-field font, not the parent */
+#urlbar .urlbar-input,
+#identity-icon-label {
+	font-size: inherit !important;
+}

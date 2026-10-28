@@ -1,87 +1,55 @@
-# Firefox GNOME theme
+# Firefox theme for Omarchy
 
-<br>
+A Firefox theme for [Omarchy](https://omarchy.org) 4. It follows whichever Omarchy theme is active, with square corners everywhere and the Omarchy font.
 
-**A GNOME theme for Firefox**
+Based on [firefox-gnome-theme](https://github.com/rafaelmardojai/firefox-gnome-theme) by Rafael Mardojai CM, which started from Luna Kurame's original Adwaita theme for Firefox. See [Credits](#credits).
 
-This theme follows latest GNOME Adwaita style. Personal fork of [rafaelmardojai/firefox-gnome-theme](https://github.com/rafaelmardojai/firefox-gnome-theme).
+## Features
 
-Changes from upstream:
+- **Follows the Omarchy theme.** `omarchy/firefox.css.tpl` is an Omarchy template, so `omarchy theme set` renders the theme's `colors.toml` to `~/.local/state/omarchy/current/theme/firefox.css`, which is linked into the Firefox profile. The browser UI and Firefox's own pages (Settings, Add-ons, New Tab) use those colors, and light themes switch Firefox to light mode. Without the generated file, a Gruvbox palette is used.
+- **Square corners** on tabs, the URL bar, buttons, menus, popups and dialogs.
+- **Omarchy font.** The UI uses fontconfig's `monospace`, which `omarchy font set` changes (JetBrains Mono by default).
+- **No window buttons.** Hyprland manages the window; close it with Super+W.
 
-- Fixed urlbar go-button icon not applying (now uses `content` instead of `list-style-image`, matching how Firefox renders it as a plain `<img>`)
-- Fixed urlbar icons (go-button, page-action icons, search-revert button) being stretched/distorted; forced to a fixed 16x16 size
-- Hid the "search with" one-offs section in the urlbar dropdown
-- Hid the "Sign in to sync" promo card in the app menu
-- Removed the tab close-button hover overlay
-- Reworked tab-label text fade/mask on hover/selection to match the overlay removal
-- Defined the missing `--gnome-content-padding` variable (12px), fixing zero padding/margins in notification popups (e.g. extension install buttons flush against the edge), the sidebar panel header and the trust panel
-- Matched notification popup body padding (top/sides) to the 12px footer margin so spacing is even on all edges
-- Hid the icon-only private browsing indicator button (shown when `browser.nova.enabled` is set), which kept an empty tab bar visible in private windows with a single hidden tab
+Firefox only reads its CSS at startup, so restart it after switching Omarchy themes.
 
-### Omarchy
+Supports the current Firefox stable release, `158`.
 
-The `omarchy` branch adapts the theme to [Omarchy](https://omarchy.org) 4:
-
-- Colors follow the active Omarchy theme. `omarchy/firefox.css.tpl` is an Omarchy template, so `omarchy theme set` renders the theme's `colors.toml` to `~/.local/state/omarchy/current/theme/firefox.css`, which is linked into the profile as `theme/omarchy/generated.css`. Without it, a Gruvbox palette is used.
-- Square corners everywhere.
-- The UI uses the Omarchy font (fontconfig's `monospace`, which `omarchy font set` changes; JetBrains Mono by default).
-- No window buttons, since Hyprland manages the window.
-
-Install with `./scripts/omarchy-install.sh` (same options as `install.sh`). Firefox only reads its CSS at startup, so restart it after switching Omarchy themes.
-
-> [!WARNING]
-> This theme might do things that are not supported by upstream Firefox. If you face an issue, test if it is reproducible in vanilla Firefox.
-
-## Description
-
-This is a bunch of CSS code to make Firefox look closer to GNOME's native apps.
-
-
-### Firefox versions support
-
-The `master` branch of this repo supports the current Firefox stable release `157`.
-
-
-## Installation scripts
-
-1. Clone this repo and enter folder:
-
-	```sh
-	git clone https://github.com/chayotesudado/firefox-gnome-theme-personal.git
-	cd firefox-gnome-theme-personal
-	```
-
-### Auto install script
-
-This script will look for Firefox profiles from various known locations (`~/.mozilla/firefox/`, Flatpak, Snap, etc) and install the theme in each one.
-
-You can execute it by running:
+## Installation
 
 ```sh
-./scripts/auto-install.sh
+git clone https://github.com/chayotesudado/firefox-theme-omarchy.git
+cd firefox-theme-omarchy
+./scripts/omarchy-install.sh
 ```
 
-### Manual install script
+The script:
 
-This script will only install the theme into the profiles found in the default Firefox folder `~/.mozilla/firefox/`. The script accepts various flags to change its behavior.
+1. Installs the theme into every profile in `~/.config/mozilla/firefox` (via `scripts/install.sh`).
+2. Copies the template to `~/.config/omarchy/themed/firefox.css.tpl`.
+3. Renders the colors for the current Omarchy theme.
+4. Links them into each profile as `chrome/firefox-gnome-theme/theme/omarchy/generated.css`.
 
-Here are some examples of how to use it:
+Options:
+
+- `-f <firefox_folder_path>`: use another Firefox folder, for example `~/.var/app/org.mozilla.firefox/.mozilla/firefox` for Flatpak.
+- `-p <profile_name>`: only install into one profile, for example `pc8577yz.default-release`.
+
+Then restart Firefox.
+
+### Customizing
+
+- **Font size:** the URL bar and tab titles are set to `0.9em` in `theme/omarchy/font.css`.
+- **Colors:** the mapping from Omarchy colors to the theme is in `theme/omarchy/colors.css`.
+
+Edit the files in the repo and run `./scripts/omarchy-install.sh` again. For changes that should survive updates, put them in `customChrome.css` or `customContent.css` in the repo root (both are git-ignored and imported last).
+
+## Updating
 
 ```sh
-./scripts/install.sh # Standard
-./scripts/install.sh -p pc8577yz.default-release # Only install in a profile named pc8577yz.default-release
-./scripts/install.sh -f ~/.var/app/org.mozilla.firefox/.mozilla/firefox # Flatpak
-./scripts/install.sh -f ~/snap/firefox/common/.mozilla/firefox #Snap
+git pull
+./scripts/omarchy-install.sh
 ```
-
-#### Script options
-- `-f <firefox_folder_path>` *optional*
-	- Set custom Firefox folder path, for example `~/.mozilla/icecat/`.
-	- Default: `~/.mozilla/firefox/`
-
-- `-p <profile_name>` *optional*
-	- Set custom profile name, for example `e0j6yb0p.default-nightly`.
-	- Default: All the profiles found in the firefox folder
 
 ## Required Firefox preferences
 We provide a **user.js** configuration file in `configuration/user.js` that enables some preferences required by this theme to work.
@@ -98,14 +66,11 @@ You should already have this file installed if you followed one of the installat
 
 > For other non essential preferences checkout `configuration/user.js`.
 
-## Updating
-
-You can follow the installation script steps again to update the theme.
-
 ## Uninstalling
 1. Go to your profile folder. (Go to `about:support` in Firefox > Application Basics > Profile Directory > Open Directory)
-2. Remove `chrome` folder.
-3. Remove the unwanted preferences from your `user.js` inside your profile folder. The install script append the needed prefs in that file, you can check what preferences does it append by checking `configuration/user.js` in this repo.
+2. Remove the `chrome` folder.
+3. Remove the unwanted preferences from your `user.js` inside your profile folder. The install script appends the preferences listed in `configuration/user.js`.
+4. Remove `~/.config/omarchy/themed/firefox.css.tpl`.
 
 ## Enabling optional features
 Optional features can be enabled by creating new `boolean` preferences in `about:config`.
@@ -115,7 +80,7 @@ Optional features can be enabled by creating new `boolean` preferences in `about
 3. Set it as a `boolean` and click on the add button
 4. Restart Firefox
 
-### Features
+### Optional features
 
 - **Hide single tab** `gnomeTheme.hideSingleTab`
 
@@ -129,7 +94,7 @@ Optional features can be enabled by creating new `boolean` preferences in `about
 
 - **Swap tab close button position** `gnomeTheme.swapTabClose`
 
-	By default the tab close buttons follows the position of the window controls, this preference reverts that behavior.
+	Move the tab close button to the other side of the tab.
 
 - **Bookmarks toolbar under tabs** `gnomeTheme.bookmarksToolbarUnderTabs`
 
@@ -161,7 +126,7 @@ Optional features can be enabled by creating new `boolean` preferences in `about
 
 - **Hide WebRTC indicator** `gnomeTheme.hideWebrtcIndicator`
 
-	Hide redundant WebRTC indicator since GNOME provides their own privacy icons in the top right.
+	Hide the WebRTC sharing indicator.
 
 - **Blank private browsing page** `gnomeTheme.blankPrivateBrowsingPage`
 
@@ -183,10 +148,6 @@ Optional features can be enabled by creating new `boolean` preferences in `about
 	
 	> **Note:** Enabling with `gnomeTheme.hideSingleTab` will replace the single tab with a title bar.
 
-- **OLED black theme** `gnomeTheme.oledBlack`
-
-	Change the dark theme into the black variant.
-	
 - **Show "List All Tabs" button on overflow** `gnomeTheme.allTabsButtonOnOverflow`
 
 	Show the `List All Tabs` button when the tabs bar is overflowing (when you have too many tabs that the width of the tabs no longer shrinks when new tabs are added).
@@ -203,36 +164,6 @@ Optional features can be enabled by creating new `boolean` preferences in `about
 
 	 Show the bookmarks bar while in fullscreen.
 
-### Extensions support
-
-We also have optional features to enable support for some Firefox extensions.
-
-> [!WARNING]
-> Note that extension support is maintained by the community, so requests to support new extensions are not allowed, and the included extensions may be broken until someone shows up to fix them.
-
-- **Adaptive Tab Bar Colour support** `gnomeTheme.extensions.adaptiveTabBarColour`
-
-	> **Note:** Adaptive Tab Bar Colour presently hard-codes the colours for the home page (both normal as well as private windows). When navigating from the home page to any other page, the colour of the UI might momentarily switch to the original firefox home page colour before switching back to the expected colour (this is especially noticeable in private windows). This only happens when navigating from the homepage to another page, subsequent navigations should be unaffected.
-	
-## Known bugs
-
-### CSD have sharp corners
-See upstream [bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1408360).
-
-#### Wayland fix:
-1. Go to the `about:config` page
-2. Search for the `layers.acceleration.force-enabled` preference and set it to true.
-3. Now restart Firefox, and it should look good!
-
-#### X11 fix:
-1. Go to the `about:config` page
-2. Type `mozilla.widget.use-argb-visuals`
-3. Set it as a `boolean` and click on the add button
-4. Now restart Firefox, and it should look good!
-
-### Icons color broken with System icons
-Icons might appear black where they should be white on some systems. I have no idea why, but you can adjust them directly in the `system-icons.css` file, look for `--gnome-icons-hack-filter` & `--gnome-window-icons-hack-filter` vars and play with css filters.
-
 ## Development
 
 If you wanna mess around the styles and change something, you might find these
@@ -247,13 +178,13 @@ page, go to options, check both of those:
 Now you can close those tools and press Ctrl+Alt+Shift+I to Inspect the browser
 UI.
 
-Also you can inspect any GTK3 application, for example type this into a terminal
-and it will run Epiphany with the GTK Inspector, so you can check the CSS styles
-of its elements too.
-
-```sh
-GTK_DEBUG=interactive epiphany
-```
-
 ## Credits
-Originally developed by **[Rafael Mardojai CM](https://github.com/rafaelmardojai)** and [contributors](https://github.com/rafaelmardojai/firefox-gnome-theme/graphs/contributors), based on **[Luna Kurame](https://github.com/lunakurame/firefox-gnome-theme)**'s original work. This is a personal fork with local customizations.
+
+This theme stands on the work of:
+
+- **[Luna Kurame](https://github.com/lunakurame/firefox-gnome-theme)**, who created the original GNOME/Adwaita theme for Firefox.
+- **[Rafael Mardojai CM](https://github.com/rafaelmardojai)** and the [firefox-gnome-theme contributors](https://github.com/rafaelmardojai/firefox-gnome-theme/graphs/contributors), who developed and maintain [firefox-gnome-theme](https://github.com/rafaelmardojai/firefox-gnome-theme), which this repo is forked from. Its full history is kept here.
+
+Colors come from the active [Omarchy](https://omarchy.org) theme.
+
+Released into the public domain under the [Unlicense](LICENSE), like the original.

@@ -2,6 +2,11 @@
 
 A Firefox theme for [Omarchy](https://omarchy.org) 4. It follows whichever Omarchy theme is active, with square corners everywhere and the Omarchy font.
 
+<p align="center">
+  <img src="docs/screenshots/browser.png" width="49%" alt="Firefox with the theme: square tabs and URL bar in the Omarchy font">
+  <img src="docs/screenshots/settings.png" width="49%" alt="Firefox Settings page restyled with the Omarchy colors">
+</p>
+
 Based on [firefox-gnome-theme](https://github.com/rafaelmardojai/firefox-gnome-theme) by Rafael Mardojai CM, which started from Luna Kurame's original Adwaita theme for Firefox. See [Credits](#credits).
 
 ## Features

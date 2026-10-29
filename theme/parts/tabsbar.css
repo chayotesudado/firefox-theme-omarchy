@@ -589,10 +589,19 @@ tab-split-view-wrapper {
 		margin-inline: calc(var(--gnome-toolbar-spacing) / 2) !important;
 		column-gap: calc(var(--split-view-tab-padding-inline) * 2) !important;
 
+		/* The halves are as tall as any other tab. Firefox makes them shorter
+		 * to leave room for the wrapper's padding, which is gone here. */
+		--split-view-tab-height: var(--tab-min-height) !important;
+
 		/* Not in collapsed tab-group */
 		:not([collapsed]) > & {
 			> .tabbrowser-tab  {
 				padding: 0 !important;
+				/* Firefox pulls the halves out to the edges of the strip with a
+				 * negative margin that its padding makes up for. Without the
+				 * padding, the pair spilled past the wrapper and sat on the
+				 * bottom edge of the strip. */
+				margin-block: 0 !important;
 				border: 0 !important;
 
 				.tab-background {
@@ -1082,6 +1091,10 @@ tab-group {
 		/* The collapsed-group rule restores the bottom padding; it is on top here */
 		tab-group[collapsed] > .tabbrowser-tab {
 			padding-block-end: 0 !important;
+		}
+		/* A split pair keeps the gap on the wrapper, not on its tabs */
+		tab-split-view-wrapper {
+			margin-block: var(--gnome-toolbar-padding) 0 !important;
 		}
 		
 		/* Move tab group line to top, keeping Firefox's distance to the edge */
